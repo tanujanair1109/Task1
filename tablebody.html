@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME.</title>
+    <link rel="stylesheet" href="tablebody.css" />
+    <!-- <script type="text/javascript" src="table.js"></script> -->
+    <script>
+      function freezeData() {
+        const form = document.getElementById("DateCD");
+        console.log(form);
+        localStorage.setItem("DateCD", DateCD);
+      }
+
+      function retrieveData() {
+        var form = document.getElementById("DateCD");
+        form.elements.value = localStorage.getItem("DateCD");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <table style="width: 110%; margin: 0 auto">
+            <tbody>
+              <tr>
+                <td rowspan="2">
+                  <b>S.no</b>
+                </td>
+                <td rowspan="2">
+                  <b>Parameter</b>
+                </td>
+                <td>
+                  <b
+                    >V1 <br />
+                    (Week-2)</b
+                  >
+                </td>
+                <td>
+                  <b
+                    >V2 <br />
+                    (Day 0)</b
+                  >
+                </td>
+                <td>
+                  <b
+                    >V3 <br />
+                    (End of Wk 1 ± 1 Day)</b
+                  >
+                </td>
+                <td>
+                  <b
+                    >V4 <br />
+                    (End of Mon 1 ± 2 <br />
+                    Days)</b
+                  >
+                </td>
+                <td>
+                  <b
+                    >V5<br />(End of Mon 4 ± 2<br />
+                    Days)</b
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Screening/<br />Baseline</b>
+                </td>
+                <td>
+                  <b>Implantation</b>
+                </td>
+                <td colspan="2">
+                  <b>Post Intervention</b>
+                </td>
+                <td><b>End of Study</b></td>
+              </tr>
+              <tr>
+                <td>1.</td>
+                <td>Informed consent</td>
+                <td>
+                  <input
+                    type="radio"
+                    name="InformedConsent"
+                    value="Done"
+                    onclick="freezeData()"
+                  />
+                  Done
+                  <br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    name="ConsentingDate"
+                    placeholder="ddmmyyy"
+                    id="DateCD"
+                    onclick="freezeData()"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+              </tr>
+
+              <tr>
+                <td>2.</td>
+                <td>Participant ID</td>
+                <td>
+                  <input type="radio" name="ParticipantID" value="Done" />
+                  Done<br />
+                  <input
+                    type="date"
+                    name="form-control"
+                    name="ParticipationDate"
+                    placeholder="ddmmyyy"
+                    id="DateParticipation"
+                  />
+                  <!-- <script>
+                                        document.getElementById("DateParticipation").addEventListener("change",function(){
+                                            this.setAttribute("readonly", "readonly");
+                                        });
+                                    </script> -->
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>Demography</td>
+                <td>
+                  <input type="radio" name="Demograhy" value="Collected" />
+                  Collected<br />
+                  <input
+                    type="Date"
+                    name="form-control"
+                    name="DemographyDate"
+                    placeholder="ddmmyyy"
+                    id="DateofDemography"
+                  />
+                  <!-- <script>
+                                    document.getElementById("DateofDemography").addEventListener("change",function(){
+                                        this.setAttribute("readonly", "readonly");
+                                    }); 
+                                </script>-->
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+              </tr>
+
+              <tr>
+                <td>4.</td>
+                <td>Eligibility Criteria</td>
+                <td>
+                  <input
+                    type="radio"
+                    name="EligibilityCriteriaV1"
+                    value="Yes"
+                  />
+                  Yes<br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    id="E1"
+                    name="EligibilityCriteria1"
+                    placeholder="ddmmyyy"
+                  />
+                  <!-- <script>
+                                        document.getElementById("E1").addEventListener("change",function(){
+                                            this.setAttribute("readonly", "readonly");
+                                        });
+                                    </script> -->
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    name="EligibilityCriteriaV2"
+                    value="Yes"
+                    onclick="freezeData()"
+                  />
+                  Yes<br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    id="E2"
+                    name="EligibilityCriteria2"
+                    placeholder="ddmmyyy"
+                  />
+                  <script>
+                    document
+                      .getElementById("E1")
+                      .addEventListener("change", function () {
+                        this.setAttribute("readonly", "readonly");
+                      });
+                  </script>
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+              </tr>
+
+              <tr>
+                <td>5.</td>
+                <td>Current General/ Dental health status</td>
+                <td>
+                  <input type="radio" name="HealthStatus1" value="Done" />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    id="Screening"
+                    name="Screening1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input type="radio" name="HealthStatus2" value="Done" />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    id="Implant"
+                    name="Implantation1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input type="radio" name="PostInterventionA" value="Done" />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    id="PIntervention"
+                    name="PostInterventionA1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input type="radio" name="PostInterventionB" value="Done" />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    id="PInterventionB"
+                    name="PostInterventionB1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input type="radio" name="EndOfStudy" value="Done" />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    id="EOS"
+                    name="EndOfStudy1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>6.</td>
+                <td>Past medical history</td>
+                <td>
+                  <input type="radio" name="PastMedicalHistory" value="Done" />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    id="PastHistory"
+                    name="PastHistory1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+              </tr>
+
+              <tr>
+                <td>7.</td>
+                <td>General & Systemic Examination</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="General_Examination1_Done"
+                    class="form-control"
+                    name="GeneralExamination1"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-control"
+                    id="General_Examination1_Date"
+                    name="Geneneral_Examination1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="General_Examination2_Done"
+                    class="form-control"
+                    name="GeneralExamination2"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-group"
+                    id="General_Examination2_Date"
+                    name="Geneneral_Examination2"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="General_Examination3_Done"
+                    class="form-control"
+                    name="GeneralExamination3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-group"
+                    id="General_Examination3_Date"
+                    name="Geneneral_Examination3"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="General_Examination4_Done"
+                    class="form-control"
+                    name="GeneralExamination4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-group"
+                    id="General_Examination4_Date"
+                    name="Geneneral_Examination4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="General_Examination5_Done"
+                    class="form-control"
+                    name="GeneralExamination5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    class="form-group"
+                    id="General_Examination_Date5"
+                    name="Geneneral_Examination5"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>8.</td>
+                <td>Dental Extraction details</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="DentalExtraction_Done"
+                    class="form-control"
+                    name="DentalExtraction1"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="DentalExtraction_Date"
+                    class="form-group"
+                    name="DentalExtractionDetails1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+              </tr>
+
+              <tr>
+                <td>9.</td>
+                <td>Intraoral RVG of implant site</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="IntraoralImplantSite1_Done"
+                    class="form-control"
+                    name="Intraoral1"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="IntraoralImplantSite1_Date"
+                    class="form-group"
+                    name="IntraoralSite1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="IntraoralImplantSite3_Done"
+                    class="form-control"
+                    name="Intraoral3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="IntraoralImplantSite3_Date"
+                    class="form-group"
+                    name="IntraoralSite3"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="IntraoralImplantSite4_Done"
+                    class="form-control"
+                    name="Intraoral4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="IntraoralImplantSite4_Date"
+                    class="form-group"
+                    name="IntraoralSite4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="IntraoralImplantSite5_Done"
+                    class="form-control"
+                    name="Intraoral5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="IntraoralImplantSite5_Date"
+                    class="form-group"
+                    name="IntraoralSite5"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>10.</td>
+                <td>CBCT scan of implant site</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="CBCT_Scan1_Done"
+                    class="form-control"
+                    name="CBCTTest1"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="CBCT_Scan1_Date"
+                    class="form-group"
+                    name="CBCTScan1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="CBCT_Scan4_Done"
+                    class="form-control"
+                    name="CBCTTest4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="CBCT_Scan4_Date"
+                    class="form-group"
+                    name="CBCTScan4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="CBCT_Scan5_Done"
+                    class="form-control"
+                    name="CBCTTest5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="CBCT_Scan5_Date"
+                    class="form-group"
+                    name="CBCTScan5"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>11.</td>
+                <td>Laboratory investigations</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="LabInvestigation1_Done"
+                    class="form-control"
+                    name="LabTest1"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="LabInvestigation1_Date"
+                    class="form-group"
+                    name="LT1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="LabInvestigation3_Done"
+                    class="form-control"
+                    name="LabTest3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="LabInvestigation3_Date"
+                    class="form-group"
+                    name="LT3"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="LabInvestigation4_Done"
+                    class="form-control"
+                    name="LabTest4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="LabInvestigation4_Date"
+                    class="form-group"
+                    name="LT4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="LabInvestigation5_Done"
+                    class="form-control"
+                    name="LabTest5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="LabInvestigation5_Date"
+                    class="form-group"
+                    name="LT5"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>12.</td>
+                <td>Pregnancy test</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="PregnancyTest1_Done"
+                    class="form-control"
+                    name="PregnancyTest1"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="PregnancyTest1_Date"
+                    class="form-group"
+                    name="PT1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="PregnancyTest2_Done"
+                    class="form-control"
+                    name="PregnancyTest2"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="PregnancyTest2_Date"
+                    class="form-group"
+                    name="PT2"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+              </tr>
+              <tr>
+                <td>13.</td>
+                <td>Visual Analog Scale</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Visual_Analog_Sacle1_Done"
+                    class="form-control"
+                    name="VAS1"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Visual_Analog_Sacle1_Date"
+                    class="form-control"
+                    name="VA_Scale1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Visual_Analog_Sacle3_Done"
+                    class="form-control"
+                    name="VAS3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Visual_Analog_Sacle3_Date"
+                    class="form-control"
+                    name="VA_Scale3"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Visual_Analog_Sacle4_Done"
+                    class="form-control"
+                    name="VAS4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Visual_Analog_Sacle4_Date"
+                    class="form-control"
+                    name="VA_Scale4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Visual_Analog_Sacle5_Done"
+                    class="form-control"
+                    name="VAS5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Visual_Analog_Sacle5_Date"
+                    class="form-control"
+                    name="VA_Scale5"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>14.</td>
+                <td>Oral Health Impact Profile-5</td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Oral_health1_Done"
+                    class="form-control"
+                    name="Oralhealth1"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Oral_health1_date"
+                    class="form-group"
+                    name="Oral_health1"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Oral_health3_Done"
+                    class="form-control"
+                    name="Oralhealth3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Oral_health3_date"
+                    class="form-group"
+                    name="Oral_health3"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Oral_health4_Done"
+                    class="form-control"
+                    name="Oralhealth4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Oral_health4_date"
+                    class="form-group"
+                    name="Oral_health4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Oral_health5_Done"
+                    class="form-control"
+                    name="Oralhealth4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Oral_health5_date"
+                    class="form-group"
+                    name="Oral_health4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>15.</td>
+                <td>Randomisation</td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="randomization2_Done"
+                    class="form-control"
+                    name="random2"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="randomization2_Date"
+                    class="form-group"
+                    name="randomization2"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+              </tr>
+              <tr>
+                <td>16.</td>
+                <td>Implantaion</td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Implantation2_Done"
+                    class="form-control"
+                    name="Implantation2"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Imp2_date"
+                    class="form-group"
+                    name="Imp2"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+              </tr>
+              <tr>
+                <td>17.</td>
+                <td>VAS (Surgeon)</td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="VAS2_Done"
+                    class="form-control"
+                    name="VAS2"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input type="Date" id= VAS2_date" class="form-group" name=
+                  "VAS_Surgeon2" placeholder="ddmmyyy">
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="VAS3_Done"
+                    class="form-control"
+                    name="VAS3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="VAS3_date"
+                    class="form-group"
+                    name="VAS_Surgeon3"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="VAS4_Done"
+                    class="form-control"
+                    name="VAS4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="VAS4_date"
+                    class="form-group"
+                    name="VAS_Surgeon4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="VAS5_Done"
+                    class="form-control"
+                    name="VAS5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="VAS5_date"
+                    class="form-group"
+                    name="VAS_Surgeon5"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>18.</td>
+                <td>Subject Diary review</td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="SubjectReview2_Done"
+                    class="form-control"
+                    name="SubjectReview2"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="SubjectReview2_date"
+                    class="form-group"
+                    name="SubjectDiaryReview2"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="SubjectReview3_Done"
+                    class="form-control"
+                    name="SubjectReview3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="SubjectReview3_date"
+                    class="form-group"
+                    name="SubjectDiaryReview3"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="SubjectReview4_Done"
+                    class="form-control"
+                    name="SubjectReview4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="SubjectReview4_date"
+                    class="form-group"
+                    name="SubjectDiaryReview4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="SubjectReview5_Done"
+                    class="form-control"
+                    name="SubjectReview5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="SubjectReview5_date"
+                    class="form-group"
+                    name="SubjectDiaryReview5"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>19.</td>
+                <td>Surgical Site Infection</td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    class="form-group"
+                    id="SurgicalInfection3_done"
+                    name="SurgicalInfection3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="SurgicationInfection3_date"
+                    class="form-group"
+                    name="DateSurgicalInfection3"
+                    placeholer="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    class="form-group"
+                    id="SurgicalInfection4_done"
+                    name="SurgicalInfection4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="SurgicationInfection4_date"
+                    class="form-group"
+                    name="DateSurgicalInfection4"
+                    placeholer="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>20.</td>
+                <td>Secondary Intervention</td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Secondary3_done"
+                    class="form-control"
+                    name="SecondaryIntervention3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Secondary3_date"
+                    class="form-control"
+                    name="DateSI3"
+                    placeholer="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Secondary4_done"
+                    class="form-control"
+                    name="SecondaryIntervention4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Secondary4_date"
+                    class="form-control"
+                    name="DateSI4"
+                    placeholer="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="Secondary5_done"
+                    class="form-control"
+                    name="SecondaryIntervention5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="Secondary5_date"
+                    class="form-control"
+                    name="DateSI5"
+                    placeholer="ddmmyyy"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>21.</td>
+                <td>AE reporting</td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    class="form-control"
+                    id="AE_reporting2Done"
+                    name="AE_reporting2"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="AE_reporting2Date"
+                    name="DateofAEREporting2"
+                    value="Done"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    class="form-control"
+                    id="AE_reporting3Done"
+                    name="AE_reporting3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="AE_reporting3Date"
+                    name="DateofAEREporting3"
+                    value="Done"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    class="form-control"
+                    id="AE_reporting4Done"
+                    name="AE_reporting4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="AE_reporting4Date"
+                    name="DateofAEREporting4"
+                    value="Done"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    class="form-control"
+                    id="AE_reporting5Done"
+                    name="AE_reporting5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="AE_reporting5Date"
+                    name="DateofAEREporting5"
+                    value="Done"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>22.</td>
+                <td>Concomitant Medication</td>
+                <td style="color: blue">
+                  Not required <br />
+                  on this visit
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="ConcomitantMedication2_Done"
+                    class="form-control"
+                    name="ConcomitantM2"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="ConcomitantMedication2_date"
+                    class="form-contcomitant2"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="ConcomitantMedication3_Done"
+                    class="form-control"
+                    name="ConcomitantM3"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="ConcomitantMedication3_date"
+                    class="form-contcomitant3"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="ConcomitantMedication4_Done"
+                    class="form-control"
+                    name="ConcomitantM4"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="ConcomitantMedication4_date"
+                    class="form-contcomitant4"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="ConcomitantMedication5_Done"
+                    class="form-control"
+                    name="ConcomitantM5"
+                    value="Done"
+                  />
+                  Done<br />
+                  <input
+                    type="Date"
+                    id="ConcomitantMedication5_date"
+                    class="form-contcomitant5"
+                    placeholder="ddmmyyy"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <input type="button" value="Clear" onclick="resetForm()" />
+          <script>
+            function resetForm() {
+              document.getElementById("form").reset;
+            }
+          </script>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
